@@ -1,0 +1,9 @@
+name: PartyPlugin
+description: $description
+version: '${version}'
+
+main: org.nyadurkadev.partyPlugin.PartyPlugin
+api-version: '1.21.11'
+load: POSTWORLD
+
+authors: [ nyavilov ]
