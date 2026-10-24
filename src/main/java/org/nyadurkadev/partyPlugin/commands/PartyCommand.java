@@ -7,8 +7,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
+import org.nyadurkadev.partyPlugin.commands.subcommands.PartyAccept;
 import org.nyadurkadev.partyPlugin.commands.subcommands.PartyCreate;
 import org.nyadurkadev.partyPlugin.commands.subcommands.PartyInfo;
+import org.nyadurkadev.partyPlugin.commands.subcommands.PartyInvite;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,6 +21,8 @@ public class PartyCommand implements CommandExecutor {
     public PartyCommand() {
         subcommands.put("create", new PartyCreate());
         subcommands.put("info", new PartyInfo());
+        subcommands.put("invite", new PartyInvite());
+        subcommands.put("accept", new PartyAccept());
     }
 
     @Override
@@ -30,7 +34,7 @@ public class PartyCommand implements CommandExecutor {
 
         if (args.length == 0) {
             player.sendMessage(Component.text(
-                            "Укажите параметры. Доступные: info, create.")
+                            "Укажите параметры. Доступные: info, create, invite, create")
                     .color(TextColor.fromHexString("#D93B1C")));
             return true;
         }
