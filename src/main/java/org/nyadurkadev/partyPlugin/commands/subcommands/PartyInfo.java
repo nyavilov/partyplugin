@@ -31,11 +31,11 @@ public class PartyInfo implements SubCommand {
             memberNames.add(name);
         }
 
-            String allMembers = String.join(", ", memberNames);
+        String allMembers = String.join(", ", memberNames);
 
-            player.sendMessage("§fЛидер: §e" + Bukkit.getOfflinePlayer(party.getLeader()).getName());
-            player.sendMessage("§fУчастники пати: " + allMembers);
-        }
+        player.sendMessage("§fЛидер: §e" + Bukkit.getOfflinePlayer(party.getLeader()).getName());
+        player.sendMessage("§fУчастники пати: " + allMembers);
+    }
 
     @Override
     public String getName() {

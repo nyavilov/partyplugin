@@ -16,7 +16,6 @@ public class PartyEntity {
 
     public void addMember(UUID uuid) {
         if (this.members.contains(uuid)) return;
-
         this.members.add(uuid);
     }
 
@@ -26,7 +25,7 @@ public class PartyEntity {
 
     public PartyEntity(UUID leader) {
         this.leader = leader;
-        this.members = new ArrayList<>(); // Инициализация! Теперь список существует.
+        this.members = new ArrayList<>();
         this.members.add(leader);
     }
 }

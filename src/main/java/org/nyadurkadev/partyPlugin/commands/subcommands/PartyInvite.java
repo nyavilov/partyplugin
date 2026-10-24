@@ -3,7 +3,6 @@ package org.nyadurkadev.partyPlugin.commands.subcommands;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.Bukkit;
-import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.nyadurkadev.partyPlugin.PartyPlugin;
 import org.nyadurkadev.partyPlugin.api.entities.PartyEntity;

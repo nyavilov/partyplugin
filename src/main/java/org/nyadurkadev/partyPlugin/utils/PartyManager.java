@@ -2,6 +2,8 @@ package org.nyadurkadev.partyPlugin.utils;
 
 import lombok.Getter;
 import lombok.Setter;
+import net.kyori.adventure.text.Component;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.nyadurkadev.partyPlugin.api.entities.PartyEntity;
 
@@ -42,8 +44,17 @@ public class PartyManager {
         target.sendMessage("Игрок" + leader.getName() + "пригласил вас. Введите /party accept");
     }
 
-    public void addMember(Player player) {
+    public void broadcast(PartyEntity party, Component message) {
+        for (UUID memberUUID : party.getMembers()) {
+            Player member = Bukkit.getPlayer(memberUUID);
+            if (member != null && member.isOnline()) {
+                member.sendMessage(message);
+            }
+        }
+    }
 
+    public void disbandParty(UUID uuid) {
+        activeParties.remove(uuid);
     }
 
     public PartyEntity getPartyByMember(UUID uuid) {
